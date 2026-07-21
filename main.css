@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Lexend,sans-serif;
+}
+html,body{
+    height:100%;
+}
+body{
+    overflow:hidden;
+    background:#000;
+    color:#fff;
+}
+/* Background */
+#bg{
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    background:
+        radial-gradient(circle at top,#030303 0%,#010101 30%,#000 100%);
+}
+canvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+/* Waves */
+.wave{
+    position:absolute;
+    bottom:-120px;
+    left:-20%;
+    width:140%;
+    height:320px;
+    background:
+    radial-gradient(circle at center,
+    rgba(255,255,255,.015),
+    transparent 70%);
+    filter:blur(60px);
+    animation:wave 10s ease-in-out infinite;
+}
+.wave:nth-child(2){
+    animation-duration:15s;
+    animation-delay:-4s;
+    opacity:.5;
+}
+@keyframes wave{
+    0%,100%{
+        transform:translateX(-5%) translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateX(5%) translateY(-40px) rotate(2deg);
+    }
+}
+/* Card */
+.wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    padding:30px;
+}
+.card{
+    width:900px;
+    max-width:100%;
+    padding:50px;
+    border-radius:28px;
+    background:rgba(0,0,0,.3);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.03);
+    box-shadow:
+    0 0 80px rgba(255,255,255,.02),
+    inset 0 0 0 1px rgba(255,255,255,.02);
+    text-align:center;
+}
+.pfp{
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid rgba(255,255,255,.05);
+    transition:.3s;
+}
+.pfp:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 35px rgba(255,255,255,.1);
+}
+h1{
+    margin-top:20px;
+    font-size:45px;
+    font-family: "Edu NSW ACT Cursive", cursive;
+    color: #c3bc5d;
+}
+.tag{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    border-radius:999px;
+    background:#050505;
+    border:1px solid rgba(255,255,255,.04);
+}
+.bio{
+    max-width:650px;
+    margin:30px auto;
+    color:#888;
+    line-height:1.8;
+}
+.socials{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+.socials a{
+    color:#fff;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:14px;
+    background:#050505;
+    border:1px solid rgba(255,255,255,.04);
+    transition:.25s;
+}
+.socials a:hover{
+    background:#fff;
+    color:#000;
+    transform:translateY(-5px);
+}
+
+/* ---------- Click-to-enter overlay ---------- */
+#enterOverlay{
+    position:fixed;
+    inset:0;
+    z-index:50;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    background:#000;
+    cursor:pointer;
+    transition:opacity .6s ease;
+}
+#enterOverlay.hidden{
+    opacity:0;
+    pointer-events:none;
+}
+#enterOverlay .enter-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 0 rgba(255,255,255,.08); }
+    50%{ box-shadow:0 0 0 18px rgba(255,255,255,0); }
+}
+#enterOverlay p{
+    color:#666;
+    letter-spacing:1px;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+/* ---------- Player ---------- */
+.player{
+    margin-top:36px;
+    padding:22px 24px;
+    border-radius:20px;
+    background:#020202;
+    border:1px solid rgba(255,255,255,.04);
+    text-align:left;
+}
+.player-track{
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.player-track .cover{
+    width:46px;
+    height:46px;
+    border-radius:8px;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,.05);
+    background:#050505;
+    flex-shrink:0;
+}
+.player-track .info{
+    text-align:left;
+}
+.player-track .name{
+    font-size:16px;
+    font-weight:600;
+}
+.player-track .artist{
+    font-size:13px;
+    color:#777;
+    margin-top:2px;
+}
+.progress-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+}
+.progress-row span{
+    font-size:11px;
+    color:#666;
+    min-width:34px;
+}
+.progress-bar{
+    flex:1;
+    -webkit-appearance:none;
+    height:4px;
+    border-radius:4px;
+    background:#161616;
+    outline:none;
+}
+.progress-bar::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    cursor:pointer;
+}
+.controls-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+}
+.buttons{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.buttons button{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.05);
+    background:#050505;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+}
+.buttons button:hover{
+    background:#fff;
+    color:#000;
+}
+.buttons button.play-pause{
+    width:52px;
+    height:52px;
+    font-size:18px;
+}
+.volume-wrap{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.volume-wrap .vol-icon{
+    font-size:15px;
+    color:#777;
+}
+.volume-bar{
+    -webkit-appearance:none;
+    width:110px;
+    height:4px;
+    border-radius:4px;
+    background:#161616;
+    outline:none;
+}
+.volume-bar::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    cursor:pointer;
+}
