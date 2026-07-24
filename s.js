@@ -38,6 +38,7 @@ function draw(){
 draw();
 
 const playlist=[
+    { title:"internet",  artist:"ex0dus", src:"/assets/songs/internet.mp3", cover:"/assets/images/album/internet.webp" },
     { title:"The Love I Lost",  artist:"Fried By Flouride", src:"/assets/songs/theloveilost.mp3", cover:"/assets/images/album/fbf.jpeg" },
     { title:"2008",  artist:"wifiskeleton", src:"/assets/songs/2008.mp3",  cover:"/assets/images/album/2008.jpeg" }, 
     { title:"it’s like i’m not even here",  artist:"mthu", src:"/assets/songs/itslikeimnotevenhere.mp3",  cover:"/assets/images/album/mthu.jpeg" }, 
