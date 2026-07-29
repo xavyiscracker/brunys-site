@@ -38,6 +38,7 @@ function draw(){
 draw();
 
 const playlist=[
+    { title:"one last call", artist:"eternally", src:"/assets/songs/onelastcall.mp3",  cover:"/assets/images/album/onelastcall.jpeg" },
     { title:"internet",  artist:"ex0dus", src:"/assets/songs/internet.mp3", cover:"/assets/images/album/internet.webp" },
     { title:"party",  artist:"wifiskeleton", src:"/assets/songs/party.mp3", cover:"/assets/images/album/party.jpeg" },
     { title:"The Love I Lost",  artist:"Fried By Flouride", src:"/assets/songs/theloveilost.mp3", cover:"/assets/images/album/fbf.jpeg" },
