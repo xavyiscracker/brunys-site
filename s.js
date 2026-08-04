@@ -38,6 +38,7 @@ function draw(){
 draw();
 
 const playlist=[
+    { title:"keep me going (BIRDBRAIN)", artist:"Slayr", src:"/assets/songs/birdbrain.mp3",  cover:"/assets/images/album/iyo.png" },
     { title:"one last call", artist:"eternally", src:"/assets/songs/onelastcall.mp3",  cover:"/assets/images/album/onelastcall.jpeg" },
     { title:"internet",  artist:"ex0dus", src:"/assets/songs/internet.mp3", cover:"/assets/images/album/internet.webp" },
     { title:"party",  artist:"wifiskeleton", src:"/assets/songs/party.mp3", cover:"/assets/images/album/party.jpeg" },
